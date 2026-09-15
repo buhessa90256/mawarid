@@ -3,34 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>موارد</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>موارد | نظام إدارة الموارد البشرية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="loginView" class="auth">
-  <div class="card auth-card">
-    <h1 style="margin:0 0 6px">موارد</h1>
-    <p class="muted">نظام موارد بشرية جاهز. لا يحتاج قاعدة بيانات. اختر حساباً للدخول مباشرة.</p>
-    <div class="accounts" id="quickAccounts"></div>
-  </div>
+<div id="loginView" class="login-page">
+  <section class="login-brand">
+    <div>
+      <div class="brand-mark">م</div>
+      <h1>موارد</h1>
+      <p>منصة إدارة شؤون الموظفين في الشركة: الملفات الوظيفية، الأقسام، الإجازات، والحضور اليومي.</p>
+      <ul class="brand-list">
+        <li>إدارة ملفات الموظفين والأقسام</li>
+        <li>طلبات الإجازة واعتمادها حسب الصلاحية</li>
+        <li>تسجيل الحضور والانصراف</li>
+      </ul>
+    </div>
+    <div style="color:#b7cdd4">شركة موارد للخدمات الإدارية</div>
+  </section>
+  <section class="login-panel">
+    <form class="login-box" onsubmit="return doLogin(event)">
+      <h2>تسجيل الدخول</h2>
+      <p class="muted">أدخل بريدك الوظيفي وكلمة المرور للمتابعة.</p>
+      <div id="loginErr" class="alert err hidden"></div>
+      <label class="field"><span>البريد الإلكتروني</span>
+        <input id="email" type="email" autocomplete="username" placeholder="name@company.com" required>
+      </label>
+      <label class="field"><span>كلمة المرور</span>
+        <input id="password" type="password" autocomplete="current-password" required>
+      </label>
+      <button class="btn block" type="submit">دخول النظام</button>
+      <div class="hint">
+        حسابات التجربة — كلمة المرور: <b>Admin@123</b><br>
+        admin@mawarid.local &nbsp;|&nbsp; hr@mawarid.local<br>
+        manager@mawarid.local &nbsp;|&nbsp; staff@mawarid.local
+      </div>
+    </form>
+  </section>
 </div>
 <div id="appView" class="shell hidden">
   <aside class="side" id="sidebar">
-    <div class="brand"><div class="logo">م</div><div><strong>موارد</strong><small>نظام الموارد البشرية</small></div></div>
+    <div class="brand"><div class="logo">م</div><div><strong>موارد</strong><small>شؤون الموظفين</small></div></div>
     <nav class="nav" id="nav"></nav>
     <div class="side-user">
       <div class="avatar" id="av">م</div>
       <div><strong id="whoName"></strong><small id="whoRole"></small></div>
-      <button class="logout" onclick="logout()">خروج</button>
+      <button class="logout" type="button" onclick="logout()">خروج</button>
     </div>
   </aside>
   <div class="main">
     <header class="top">
-      <button class="menu" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+      <button class="menu" type="button" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
       <h1 id="pageTitle">لوحة التحكم</h1>
+      <span class="chip" id="todayChip"></span>
     </header>
     <main class="content" id="page"></main>
+    <div class="footer">موارد — نظام إدارة الموارد البشرية · البيانات محفوظة على هذا الجهاز</div>
   </div>
 </div>
 <script src="data.js"></script>
