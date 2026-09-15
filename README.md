@@ -1,12 +1,7 @@
 # موارد
 
-نظام إدارة موارد بشرية. افتح `index.html` في المتصفح.
+https://github.com/buhessa90256/mawarid
 
-سجل الدخول بالبريد وكلمة المرور. البيانات تُحفظ على الجهاز.
+افتح `index.html` بعد تحميل المستودع.
 
-حسابات التجربة — كلمة المرور: Admin@123
-
-- admin@mawarid.local
-- hr@mawarid.local
-- manager@mawarid.local
-- staff@mawarid.local
+اضغط أحد الحسابات الجاهزة للدخول مباشرة.
